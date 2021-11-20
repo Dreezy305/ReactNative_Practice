@@ -4,9 +4,13 @@ import { StyleSheet, Text, View, Button } from "react-native";
 
 export default function App() {
   const [change, setChange] = useState(false);
+  const [person, setPerson] = useState({ name: "mario", age: 40 });
   return (
     <View style={styles.container}>
       <Text>My name is {!change ? "shaun" : "riley"}</Text>
+      <Text>
+        His name is {person.name}, his age is {person.age}
+      </Text>
       <View style={styles.header}>
         <Text style={styles.boldText}>Hello World</Text>
       </View>
@@ -20,9 +24,7 @@ export default function App() {
         <Button
           title="change name"
           color="#841584"
-          onPress={() => {
-            setChange(!change);
-          }}
+          onPress={() => setChange(!change)}
         />
       </View>
     </View>
