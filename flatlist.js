@@ -11,13 +11,25 @@ export default function flatlist() {
     { id: 6, name: "window" },
     { id: 7, name: "mac" },
   ]);
+
+  const pressHandler = (id) => {
+    console.log(id);
+    setPeople((prevPeople) => {
+      return prevPeople.filter((person) => person.id !== id);
+    });
+  };
+
   return (
     <View style={styles.container}>
       <FlatList
         keyExtractor={(item) => item.id}
         numColumns={2}
         data={people}
-        renderItem={({ item }) => <Text style={styles.item}>{item.name}</Text>}
+        renderItem={({ item }) => (
+          <TouchableOpacity onPress={() => pressHandler(item.id)}>
+            <Text style={styles.item}>{item.name}</Text>
+          </TouchableOpacity>
+        )}
       />
     </View>
   );
