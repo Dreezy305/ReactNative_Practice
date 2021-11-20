@@ -1,8 +1,7 @@
-import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import { StyleSheet, Text, View, FlatList } from "react-native";
 
-export default function App() {
+export default function flatlist() {
   const [people, setPeople] = useState([
     { id: 1, name: "shaun" },
     { id: 2, name: "yoshi" },
@@ -30,8 +29,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     paddingTop: 40,
     paddingHorizontal: 20,
-    // alignItems: "center",
-    // justifyContent: "center",
   },
   item: {
     marginTop: 24,
