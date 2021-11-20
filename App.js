@@ -24,7 +24,10 @@ export default function App() {
         <Button
           title="change name"
           color="#841584"
-          onPress={() => setChange(!change)}
+          onPress={() => {
+            setChange(!change);
+            setPerson({ name: "riley", age: 42 });
+          }}
         />
       </View>
     </View>
