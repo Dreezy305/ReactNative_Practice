@@ -1,19 +1,27 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, Text, View, Button, TextInput } from "react-native";
 
 export default function App() {
   const [change, setChange] = useState(false);
   const [person, setPerson] = useState({ name: "mario", age: 40 });
+  const [text, setText] = useState("");
   return (
     <View style={styles.container}>
       <Text>My name is {!change ? "shaun" : "riley"}</Text>
       <Text>
-        His name is {person.name}, his age is {person.age}
+        His name is {person.name}, his age is {person.age} and his best friend's
+        name is {text}
       </Text>
       <View style={styles.header}>
         <Text style={styles.boldText}>Hello World</Text>
       </View>
+      <TextInput
+        style={styles.input}
+        value={text}
+        placeholder="e.g. John doe"
+        onChangeText={(val) => setText(val)}
+      />
       <View style={styles.body}>
         <Text>lorem ipsum dolor sit amet</Text>
         <Text>lorem ipsum dolor sit amet</Text>
@@ -56,5 +64,12 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 20,
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: "#777",
+    padding: 8,
+    margin: 10,
+    width: 200,
   },
 });
