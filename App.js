@@ -16,6 +16,7 @@ export default function App() {
       <View style={styles.header}>
         <Text style={styles.boldText}>Hello World</Text>
       </View>
+
       <TextInput
         style={styles.input}
         value={text}
@@ -23,6 +24,14 @@ export default function App() {
         placeholder="e.g. John doe"
         onChangeText={(val) => setText(val)}
       />
+
+      <TextInput
+        style={styles.input}
+        multiline
+        placeholder="any number"
+        keyboardType="numeric"
+      />
+
       <View style={styles.body}>
         <Text>lorem ipsum dolor sit amet</Text>
         <Text>lorem ipsum dolor sit amet</Text>
