@@ -19,6 +19,7 @@ export default function App() {
       <TextInput
         style={styles.input}
         value={text}
+        multiline
         placeholder="e.g. John doe"
         onChangeText={(val) => setText(val)}
       />
