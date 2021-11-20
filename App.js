@@ -3,7 +3,14 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, Button, TextInput } from "react-native";
 
 export default function App() {
-  return <View></View>;
+  const [people, setPeople] = useState([
+    { key: 1, name: "shaun" },
+    { key: 2, name: "yoshi" },
+    { key: 3, name: "mario" },
+    { key: 4, name: "luigi" },
+    { key: 5, name: "android" },
+  ]);
+  return <View style={styles.container}></View>;
 }
 
 const styles = StyleSheet.create({
