@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import TodoItem from "./components/todoItem";
+import AddTodo from "./components/addTodo";
 
 export default function App() {
   const [todos, setTodos] = useState([
@@ -17,6 +18,13 @@ export default function App() {
     });
   };
 
+  const submitHandler = (text) => {
+    setTodos((prevTodos) => {
+      console.log(prevTodos);
+      return [{ text: text, key: Math.random() }, ...prevTodos];
+    });
+  };
+
   return (
     <View style={styles.container}>
       {/* HEADER GOES HERE */}
@@ -25,6 +33,7 @@ export default function App() {
       </View>
       <View style={styles.content}>
         {/* TODO FORM */}
+        <AddTodo submitHandler={submitHandler} />
         <View style={styles.list}>
           <FlatList
             data={todos}
