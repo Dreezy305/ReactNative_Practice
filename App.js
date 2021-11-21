@@ -13,7 +13,7 @@ export default function App() {
   const pressHandler = (key) => {
     console.log(key);
     setTodos((prevTodos) => {
-      return prevTodos.filter((todo) => todo.key !== key);
+      return prevTodos.filter((todo) => todo.key != key);
     });
   };
 
