@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
   list: {
     marginTop: 20,
     backgroundColor: "yellow",
+    flex: 1,
   },
   header: {
     height: 80,
