@@ -40,7 +40,12 @@ export default function App() {
   };
 
   return (
-    <TouchableWithoutFeedback onPress={() => console.log("dismissed")}>
+    <TouchableWithoutFeedback
+      onPress={() => {
+        console.log("dismissed");
+        Keyboard.dismiss();
+      }}
+    >
       <View style={styles.container}>
         {/* HEADER GOES HERE */}
         <View style={styles.header}>
