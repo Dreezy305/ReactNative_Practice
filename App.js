@@ -41,32 +41,32 @@ export default function App() {
   };
 
   return (
-    <Sandbox />
-    // <TouchableWithoutFeedback
-    //   onPress={() => {
-    //     console.log("dismissed");
-    //     Keyboard.dismiss();
-    //   }}
-    // >
-    //   <View style={styles.container}>
-    //     {/* HEADER GOES HERE */}
-    //     <View style={styles.header}>
-    //       <Text style={styles.title}>My Todos</Text>
-    //     </View>
-    //     <View style={styles.content}>
-    //       {/* TODO FORM */}
-    //       <AddTodo submitHandler={submitHandler} />
-    //       <View style={styles.list}>
-    //         <FlatList
-    //           data={todos}
-    //           renderItem={({ item }) => (
-    //             <TodoItem item={item} pressHandler={pressHandler} />
-    //           )}
-    //         />
-    //       </View>
-    //     </View>
-    //   </View>
-    // </TouchableWithoutFeedback>
+    // <Sandbox />
+    <TouchableWithoutFeedback
+      onPress={() => {
+        console.log("dismissed");
+        Keyboard.dismiss();
+      }}
+    >
+      <View style={styles.container}>
+        {/* HEADER GOES HERE */}
+        <View style={styles.header}>
+          <Text style={styles.title}>My Todos</Text>
+        </View>
+        <View style={styles.content}>
+          {/* TODO FORM */}
+          <AddTodo submitHandler={submitHandler} />
+          <View style={styles.list}>
+            <FlatList
+              data={todos}
+              renderItem={({ item }) => (
+                <TodoItem item={item} pressHandler={pressHandler} />
+              )}
+            />
+          </View>
+        </View>
+      </View>
+    </TouchableWithoutFeedback>
   );
 }
 
@@ -77,9 +77,12 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: 40,
+    backgroundColor: "pink",
+    flex: 1,
   },
   list: {
     marginTop: 20,
+    backgroundColor: "yellow",
   },
   header: {
     height: 80,
