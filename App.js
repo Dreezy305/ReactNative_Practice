@@ -19,10 +19,12 @@ export default function App() {
   };
 
   const submitHandler = (text) => {
-    setTodos((prevTodos) => {
-      console.log(prevTodos);
-      return [{ text: text, key: Math.random() }, ...prevTodos];
-    });
+    if (text.length > 3) {
+      setTodos((prevTodos) => {
+        console.log(prevTodos);
+        return [{ text: text, key: Math.random() }, ...prevTodos];
+      });
+    }
   };
 
   return (
